@@ -52,7 +52,7 @@ const SustainabilitySection: React.FC = () => (
 );
 
 const SocialIcons: React.FC = () => (
-  <div className="my-10 flex justify-center gap-5 text-4xl text-themetext">
+  <div className="my-10 flex justify-center gap-5 text-4xl text-themeText">
     <a
       href="#"
       className="transition hover:text-themeSecondary"
@@ -87,7 +87,7 @@ const SocialIcons: React.FC = () => (
 export default function Footer() {
   return (
     <footer className="max-w-screen-xl mx-auto my-10 p-5">
-      <div className="flex flex-col items-center text-center lg:text-left lg:items-start lg:flex-row justify-between text-themetext gap-5">
+      <div className="flex flex-col items-center text-center lg:text-left lg:items-start lg:flex-row justify-between text-themeText gap-5">
         <div className="flex flex-col items-center">
           <Image
             src="/images/logo.png"
@@ -137,7 +137,7 @@ export default function Footer() {
         <SustainabilitySection />
       </div>
       <SocialIcons />
-      <div className="flex flex-col md:flex-row items-center justify-between text-themetext font-thin">
+      <div className="flex flex-col md:flex-row items-center justify-between text-themeText font-thin">
         <span>© 2024 Agence Dnd</span>
         <ul className="flex gap-3">
           <li className="transition hover:text-black">

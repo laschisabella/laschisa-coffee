@@ -37,18 +37,18 @@ const NavMenu = React.forwardRef<HTMLDivElement, NavMenuProps>(
         isOpen ? "block" : "hidden lg:block"
       }`}
     >
-      <ul className="flex flex-col p-5 items-start bg-themeSecondary brightness-90 text-white rounded lg: font-bold lg:flex-row lg:gap-4 lg:bg-transparent lg:brightness-100 lg:text-themetext">
-        <li className="transition hover:text-black border-b border-b-themetext py-2 w-full lg:border-none">
+      <ul className="flex flex-col p-5 items-start bg-themeSecondary brightness-90 text-white rounded lg: font-bold lg:flex-row lg:gap-4 lg:bg-transparent lg:brightness-100 lg:text-themeText">
+        <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
           <a href="#products" aria-label="Coffee section">
             Products
           </a>
         </li>
-        <li className="transition hover:text-black border-b border-b-themetext py-2 w-full lg:border-none">
+        <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
           <a href="#" aria-label="Brewing section">
             Brewing
           </a>
         </li>
-        <li className="transition hover:text-black border-b border-b-themetext py-2 w-full lg:border-none">
+        <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
           <a href="#" aria-label="Services section">
             Services
           </a>
@@ -73,7 +73,7 @@ const MainText: React.FC = () => (
     <h1 className="brightness-150 lg:brightness-100 font-merriweather text-4xl md:text-5xl lg:text-7xl text-balance py-8 lg:py-16 lg:max-w-lg text-themeTitle">
       The Art of Coffee Crafting
     </h1>
-    <p className="text-lg md:text-xl lg:text-2xl text-themeBg lg:text-themetext max-w-lg font-light opacity-80 text-balance">
+    <p className="text-lg md:text-xl lg:text-2xl text-themeBg lg:text-themeText max-w-lg font-light opacity-80 text-balance">
       Discover exceptional blends that elevate your coffee experience.
     </p>
     <a href="#info">

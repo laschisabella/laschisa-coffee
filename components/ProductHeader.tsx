@@ -41,11 +41,11 @@ export default function ProductHeader() {
               height={50}
               className="w-8 sm:w-full"
             />
-            <div className="flex flex-col sm:flex hidden">
+            <div className="flex-col sm:flex hidden">
               <span className="font-merriweather text-2xl font-bold text-themeSecondary relative top-0.5">
                 laschisa
               </span>
-              <span className="tracking-widest text-xs relative bottom-0.5 left-1 text-themetext">
+              <span className="tracking-widest text-xs relative bottom-0.5 left-1 text-themeText">
                 coffee shop
               </span>
             </div>
@@ -58,12 +58,12 @@ export default function ProductHeader() {
             placeholder="Search"
             className="p-1 sm:py-3 sm:px-6 w-full"
           />
-          <button className=" bg-themetext px-3 hover:brightness-90 transition">
+          <button className=" bg-themeText px-3 hover:brightness-90 transition">
             <MagnifyingGlass className="text-lg sm:text-3xl text-themeBg" />
           </button>
         </div>
 
-        <div className=" text-xl sm:text-3xl flex gap-3 text-themetext">
+        <div className=" text-xl sm:text-3xl flex gap-3 text-themeText">
           <HeartStraight className="hover:brightness-50 transition cursor-pointer" />
           <div className="relative">
             <ShoppingCart className="hover:brightness-50 transition cursor-pointer" />

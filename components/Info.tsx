@@ -9,7 +9,7 @@ const InfoBlock = ({
     <h2 className="text-themeTitle text-lg lg:text-2xl font-bold mb-2">
       {title}
     </h2>
-    <p className="text-themetext text-base lg:text-lg">{description}</p>
+    <p className="text-themeText text-base lg:text-lg">{description}</p>
   </div>
 );
 

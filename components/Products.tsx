@@ -16,7 +16,7 @@ const Trends = () => {
         <h2 className="text-4xl font-merriweather text-themeSecondary">
           Be aware of the latest trends
         </h2>
-        <p className="text-lg text-themetext font-thin py-2">
+        <p className="text-lg text-themeText font-thin py-2">
           Stay informed about new trends and our various offers.
         </p>
         <a
@@ -30,7 +30,7 @@ const Trends = () => {
         <input
           type="text"
           placeholder="email@address.com"
-          className="bg-themeBg px-6 py-3 placeholder:text-themetext"
+          className="bg-themeBg px-6 py-3 placeholder:text-themeText"
         />
         <a
           href="#"
@@ -134,7 +134,7 @@ const ProductsCarousel = () => {
                 <h2 className="pb-2 text-themeTitle font-bold">
                   {coffee.title}
                 </h2>
-                <p className="text-themetext w-full">{coffee.description}</p>
+                <p className="text-themeText w-full">{coffee.description}</p>
               </div>
               <Link
                 href={`/products/${coffee.id}`}
@@ -150,7 +150,7 @@ const ProductsCarousel = () => {
         <h1 className="text-4xl font-merriweather text-themeSecondary">
           Products
         </h1>
-        <p className="text-lg text-themetext font-thin py-2">
+        <p className="text-lg text-themeText font-thin py-2">
           Discover our selection of exclusive coffees, carefully chosen to offer
           unique experiences with every sip. From bold flavors to subtle notes,
           we have something for every coffee lover. Come explore and find your

@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         themeTitle: "#a06056",
-        themetext: "#706458",
+        themeText: "#706458",
         themeSecondary: "#534b42",
         themeBg: "#f3eee8",
         coffeeBg: "#8c6e62",
