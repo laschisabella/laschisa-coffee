@@ -1,14 +1,21 @@
-import { GlobeHemisphereWest } from "@phosphor-icons/react/dist/ssr";
+import {
+  GlobeHemisphereWest,
+  Headset,
+  HeartStraight,
+  MagnifyingGlass,
+  ShoppingCart,
+} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductHeader() {
   return (
     <header>
-      <div className="bg-themeSecondary px-5 py-2">
-        <div className="max-w-screen-xl mx-auto flex justify-between">
-          <p className="text-themeBg">
-            Welcome to Needus & Get the best product
+      <div className="bg-themeSecondary">
+        <div className="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4 sm:text-base text-sm flex-col-reverse sm:flex-row">
+          <p className="text-themeBg hidden sm:block">
+            Welcome to Laschisa Coffee Shop & Discover the finest coffee for
+            your taste!
           </p>
           <div className="flex text-themeBg">
             <GlobeHemisphereWest
@@ -24,16 +31,17 @@ export default function ProductHeader() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl mx-auto py-6">
-        <Link href={"/"}>
+      <div className="max-w-screen-xl mx-auto p-4 flex justify-between items-center">
+        <Link href={"/"} className="min-w-max">
           <div className="flex items-center gap-2">
             <Image
               src="/images/logo.png"
               alt="Laschisa logo"
               width={50}
               height={50}
+              className="w-8 sm:w-full"
             />
-            <div className="flex flex-col">
+            <div className="flex flex-col sm:flex hidden">
               <span className="font-merriweather text-2xl font-bold text-themeSecondary relative top-0.5">
                 laschisa
               </span>
@@ -43,6 +51,28 @@ export default function ProductHeader() {
             </div>
           </div>
         </Link>
+
+        <div className="flex items-stretch w-full mx-5 max-w-2xl">
+          <input
+            type="text"
+            placeholder="Search"
+            className="p-1 sm:py-3 sm:px-6 w-full"
+          />
+          <button className=" bg-themetext px-3 hover:brightness-90 transition">
+            <MagnifyingGlass className="text-lg sm:text-3xl text-themeBg" />
+          </button>
+        </div>
+
+        <div className=" text-xl sm:text-3xl flex gap-3 text-themetext">
+          <HeartStraight className="hover:brightness-50 transition cursor-pointer" />
+          <div className="relative">
+            <ShoppingCart className="hover:brightness-50 transition cursor-pointer" />
+            <div className="rounded-full bg-themeTitle text-white text-xs flex justify-center items-center h-5 w-5 absolute -top-3 sm:-top-1 sm:-right-1 -right-2">
+              <span className="relative top-px right-px">3</span>
+            </div>
+          </div>
+          <Headset className="hover:brightness-50 transition cursor-pointer" />
+        </div>
       </div>
     </header>
   );
