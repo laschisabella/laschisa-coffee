@@ -105,11 +105,11 @@ const ProductsCarousel = () => {
 
   return (
     <div
-      className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-20 p-8 items-center"
+      className="flex flex-col-reverse gap-5 p-8 items-center sm:items-start"
       id="products"
     >
       <div
-        className="w-full lg:w-3/5 flex whitespace-nowrap gap-4 overflow-hidden"
+        className="w-full flex whitespace-nowrap gap-4 overflow-hidden"
         ref={carouselRef}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -122,7 +122,7 @@ const ProductsCarousel = () => {
           >
             <div className="w-full h-48 flex justify-center items-center bg-coffeeBg rounded-t-md">
               <Image
-                src={coffee.smallimage}
+                src={coffee.smallImage}
                 alt="coffee item"
                 width={100}
                 height={100}
@@ -146,17 +146,17 @@ const ProductsCarousel = () => {
           </div>
         ))}
       </div>
-      <div className="w-full lg:w-2/5">
+      <div className="w-full">
         <h1 className="text-4xl font-merriweather text-themeSecondary">
           Products
         </h1>
-        <p className="text-lg text-themeText font-thin py-2">
+        <p className="text-lg text-themeText text-balance font-thin py-2">
           Discover our selection of exclusive coffees, carefully chosen to offer
           unique experiences with every sip. From bold flavors to subtle notes,
           we have something for every coffee lover. Come explore and find your
           favorite!
         </p>
-        <div className="flex gap-4 mt-4">
+        <div className="flex mt-4">
           <button onClick={scrollLeftButton} aria-label="Scroll left">
             <CaretCircleLeft
               size={50}
@@ -179,7 +179,7 @@ const ProductsCarousel = () => {
 
 export default function Products() {
   return (
-    <div className="bg-white lg:py-20">
+    <div className="bg-white lg:py-8">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
         <Trends />
         <ProductsCarousel />

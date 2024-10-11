@@ -13,6 +13,8 @@ const config: Config = {
         themeText: "#706458",
         themeSecondary: "#534b42",
         themeBg: "#f3eee8",
+        themeBorder: "#dccebc",
+
         coffeeBg: "#8c6e62",
       },
       fontFamily: {

@@ -129,7 +129,7 @@ export default function Welcome() {
   return (
     <div className="w-full h-screen flex font-varta relative">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-end z-10">
-        <div className="flex flex-col h-full p-10 lg:mr-20">
+        <div className="flex flex-col h-full p-10 lg:mr-5">
           <div className="flex items-center justify-between gap-3 relative">
             <div className="lg:hidden">
               {isMobile && (
