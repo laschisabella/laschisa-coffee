@@ -57,8 +57,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     <div>
       <ProductHeader />
       <div className="bg-white">
-        <div className="max-w-screen-xl mx-auto py-14 flex gap-20 justify-center items-start">
-          <div className="w-2/5 h-[32rem] relative scale-90 hover:scale-110 transition-transform duration-300 cursor-zoom-in">
+        <div className="max-w-screen-xl mx-auto py-14 flex flex-col lg:flex-row lg:gap-20 justify-center items-start">
+          <div className="w-full lg:w-2/5 h-[32rem] relative scale-90 hover:scale-100 transition-transform duration-300 cursor-zoom-in">
             <Image
               src={coffee.bigImage}
               alt={`${coffee.title} image.`}
@@ -68,8 +68,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             />
             <div className="absolute top-6 left-5 border-8 border-white w-[92%] h-[92%] rounded-ee-[60px] rounded-ss-[120px]" />
           </div>
-          <div className="max-w-md">
-            <div className="flex flex-row-reverse items-center justify-between">
+          <div className="max-w-md flex flex-col items-center gap-2 px-5">
+            <div className="flex flex-row-reverse items-center gap-5 justify-between">
               <span className="rounded-full bg-themeSecondary shadow-md text-white font-bold py-1 px-3 my-2 inline-block">
                 {coffee.category}
               </span>
@@ -126,8 +126,19 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
             <CoffeeOptions coffee={coffee} />
 
-            <p>Discount: {coffee.discount}</p>
-            <p>Price: {coffee.price}</p>
+            <div className="text-5xl text-themeTitle my-5 text-center">
+              <span>$</span>
+              <span>{coffee.price}</span>
+            </div>
+
+            <div className="flex gap-3 uppercase">
+              <div className="text-themeText border border-themeText px-5 py-2 font-bold cursor-pointer transition hover:brightness-125 select-none">
+                Add to favorites
+              </div>
+              <div className="text-white bg-themeText border border-themeText px-5 py-2 font-bold cursor-pointer transition hover:brightness-125 select-none">
+                Add to cart
+              </div>
+            </div>
           </div>
         </div>
       </div>

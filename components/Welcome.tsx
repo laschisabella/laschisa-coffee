@@ -38,21 +38,21 @@ const NavMenu = React.forwardRef<HTMLDivElement, NavMenuProps>(
       }`}
     >
       <ul className="flex flex-col items-start bg-themeSecondary brightness-90 text-white rounded lg:font-bold lg:flex-row lg:gap-4 lg:bg-transparent lg:brightness-100 lg:text-themeText">
-        <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
-          <a href="#products" aria-label="Coffee section">
+        <a href="#products" aria-label="Products section">
+          <li className="transition hover:text-black border-b border-b-themeText p-5 lg:p-0 w-[80vw] lg:w-auto lg:border-none">
             Products
-          </a>
-        </li>
-        <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
-          <a href="#trends" aria-label="Brewing section">
+          </li>
+        </a>
+        <a href="#trends" aria-label="Trends section">
+          <li className="transition hover:text-black border-b border-b-themeText p-5 lg:p-0 w-[80vw] lg:w-auto lg:border-none">
             Trends
-          </a>
-        </li>
-        <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
-          <a href="#footer" aria-label="Services section">
+          </li>
+        </a>
+        <a href="#footer" aria-label="Sustainability section">
+          <li className="transition hover:text-black border-b border-b-themeText p-5 lg:p-0 w-[80vw] lg:w-auto lg:border-none">
             Sustainability
-          </a>
-        </li>
+          </li>
+        </a>
       </ul>
     </motion.nav>
   )
