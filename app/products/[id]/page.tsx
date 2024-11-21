@@ -1,4 +1,4 @@
-import { use } from "react"; // Certifique-se de que isso é suportado na versão do React que você está usando
+import { use } from "react";
 import getCoffeeList, { CoffeeI } from "@coffee/data";
 import ProductHeader from "@coffee/components/ProductHeader";
 import Image from "next/image";
@@ -6,12 +6,14 @@ import {
   Clock,
   MapPin,
   Fire,
-  Tag,
   Star,
   CheckCircle,
   XCircle,
   Cube,
+  Coffee,
+  Prohibit,
 } from "@phosphor-icons/react/dist/ssr";
+import CoffeeOptions from "@coffee/components/CoffeeOptions";
 
 const fetchCoffeeData = async (id: string): Promise<CoffeeI | null> => {
   const coffeeList: CoffeeI[] = getCoffeeList();
@@ -29,47 +31,61 @@ const CoffeeDetail = ({
   Icon: React.ElementType;
   iconClassName?: string;
 }) => (
-  <div className="w-24 h-28 p-1 rounded-lg border border-themeBorder flex flex-col justify-between text-center text-themeText">
+  <div className="w-24 h-24 p-2 text-sm rounded-3xl border border-themeBorder flex flex-col justify-between text-center text-themeText shadow-md">
     <strong>{label}</strong>
-    <Icon size={32} className={`mx-auto ${iconClassName}`} weight="fill" />
+    <Icon className={`mx-auto text-3xl ${iconClassName}`} weight="fill" />
     <span>{value}</span>
   </div>
 );
 
 export default function ProductPage({ params }: { params: { id: string } }) {
-  const coffee = use(fetchCoffeeData(params.id)); // Mantendo a lógica original com use
+  const coffee = use(fetchCoffeeData(params.id));
 
   if (!coffee) {
-    return <h1>Product not found.</h1>;
+    return (
+      <div>
+        <ProductHeader />
+        <div className="bg-white text-center py-20 flex flex-col items-center">
+          <p>Product not found.</p>
+          <Prohibit size={50} className="text-themeText" />
+        </div>
+      </div>
+    );
   }
 
   return (
     <div>
       <ProductHeader />
       <div className="bg-white">
-        <div className="max-w-screen-xl mx-auto py-20 flex gap-10">
-          <Image
-            src={coffee.bigImage}
-            alt={`${coffee.title} image.`}
-            width={500}
-            height={500}
-            className="w-1/2 h-[70vh] object-cover rounded-lg"
-          />
-          <div>
-            <span className="rounded-full bg-themeSecondary text-white font-bold py-1 px-3 my-2 inline-block">
-              {coffee.category}
-            </span>
-            <h1 className="text-6xl font-merriweather my-3 text-themeTitle">
-              {coffee.title}
-            </h1>
-            <p className="text-xl text-balance font-light text-themeText">
+        <div className="max-w-screen-xl mx-auto py-14 flex gap-20 justify-center items-start">
+          <div className="w-2/5 h-[32rem] relative scale-90 hover:scale-110 transition-transform duration-300 cursor-zoom-in">
+            <Image
+              src={coffee.bigImage}
+              alt={`${coffee.title} image.`}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover rounded-ee-[60px] rounded-ss-[120px] shadow-lg opacity-90"
+            />
+            <div className="absolute top-6 left-5 border-8 border-white w-[92%] h-[92%] rounded-ee-[60px] rounded-ss-[120px]" />
+          </div>
+          <div className="max-w-md">
+            <div className="flex flex-row-reverse items-center justify-between">
+              <span className="rounded-full bg-themeSecondary shadow-md text-white font-bold py-1 px-3 my-2 inline-block">
+                {coffee.category}
+              </span>
+              <h1 className="text-6xl font-merriweather my-3 text-themeTitle italic">
+                {coffee.title}
+              </h1>
+            </div>
+            <p className="text-xl font-light text-themeText">
               {coffee.description}
             </p>
-            <div className="flex flex-wrap gap-2 max-w-sm my-5">
+            <div className="flex flex-wrap gap-4 my-5 max-w-sm mx-auto">
               <CoffeeDetail
                 label="Preparation"
                 value={coffee.preparationTime}
                 Icon={Clock}
+                iconClassName={"text-themeTitle"}
               />
               <CoffeeDetail
                 label="Origin"
@@ -86,7 +102,12 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                     : "text-blue-200"
                 }
               />
-              <CoffeeDetail label="Size" value={coffee.size} Icon={Tag} />
+              <CoffeeDetail
+                label="Size"
+                value={coffee.size}
+                Icon={Coffee}
+                iconClassName={"text-themeSecondary"}
+              />
               <CoffeeDetail
                 label="Rating"
                 value={coffee.rating}
@@ -103,7 +124,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               />
             </div>
 
-            <p>Options: {coffee.options}</p>
+            <CoffeeOptions coffee={coffee} />
+
             <p>Discount: {coffee.discount}</p>
             <p>Price: {coffee.price}</p>
           </div>

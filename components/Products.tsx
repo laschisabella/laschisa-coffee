@@ -12,7 +12,10 @@ import { useRef, useState, useEffect } from "react";
 const Trends = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center lg:justify-between gap-5 p-8 text-center md-text-left">
-      <div className="flex flex-col items-center lg:items-start">
+      <div
+        className="flex flex-col items-center lg:items-start scroll-m-14"
+        id="trends"
+      >
         <h2 className="text-4xl font-merriweather text-themeSecondary">
           Be aware of the latest trends
         </h2>

@@ -6,3 +6,7 @@ body {
   background: #f3eee8;
   box-sizing: border-box;
 }
+
+.teste {
+  border-radius: 25% 0 25% 0;
+}

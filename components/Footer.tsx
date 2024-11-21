@@ -86,7 +86,7 @@ const SocialIcons: React.FC = () => (
 
 export default function Footer() {
   return (
-    <footer className="max-w-screen-xl mx-auto my-10 p-5">
+    <footer id="footer" className="max-w-screen-xl mx-auto my-10 p-5">
       <div className="flex flex-col items-center text-center lg:text-left lg:items-start lg:flex-row justify-between text-themeText gap-5">
         <div className="flex flex-col items-center">
           <Image

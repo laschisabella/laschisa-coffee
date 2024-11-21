@@ -37,25 +37,20 @@ const NavMenu = React.forwardRef<HTMLDivElement, NavMenuProps>(
         isOpen ? "block" : "hidden lg:block"
       }`}
     >
-      <ul className="flex flex-col p-5 items-start bg-themeSecondary brightness-90 text-white rounded lg: font-bold lg:flex-row lg:gap-4 lg:bg-transparent lg:brightness-100 lg:text-themeText">
+      <ul className="flex flex-col items-start bg-themeSecondary brightness-90 text-white rounded lg:font-bold lg:flex-row lg:gap-4 lg:bg-transparent lg:brightness-100 lg:text-themeText">
         <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
           <a href="#products" aria-label="Coffee section">
             Products
           </a>
         </li>
         <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
-          <a href="#" aria-label="Brewing section">
-            Brewing
+          <a href="#trends" aria-label="Brewing section">
+            Trends
           </a>
         </li>
         <li className="transition hover:text-black border-b border-b-themeText py-2 w-full lg:border-none">
-          <a href="#" aria-label="Services section">
-            Services
-          </a>
-        </li>
-        <li className="transition hover:text-black py-2 w-full lg:border-none">
-          <a href="#" aria-label="Inspiration section">
-            Inspiration
+          <a href="#footer" aria-label="Services section">
+            Sustainability
           </a>
         </li>
       </ul>
@@ -129,8 +124,8 @@ export default function Welcome() {
   return (
     <div className="w-full h-screen flex font-varta relative">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-end z-10">
-        <div className="flex flex-col h-full p-10 lg:mr-5">
-          <div className="flex items-center justify-between gap-3 relative">
+        <div className="flex flex-col h-full lg:px-5 p-10 lg:max-w-screen-sm lg:mr-5 w-full">
+          <div className="flex items-center justify-between lg:justify-start gap-3 lg:gap-10 relative">
             <div className="lg:hidden">
               {isMobile && (
                 <button
@@ -158,7 +153,7 @@ export default function Welcome() {
         />
         <ChatsCircle
           weight="fill"
-          className="absolute bottom-7 right-6 lg:top-7 lg:right-10 text-5xl text-themeBg border-2 border-themeBg brightness-75 lg:brightness-100 rounded-full p-2"
+          className="absolute bottom-10 right-10 lg:right-10 lg:top-7 text-5xl text-themeBg border-2 border-themeBg brightness-75 lg:brightness-100 rounded-full p-2"
           aria-label="Open chat"
         />
       </div>
